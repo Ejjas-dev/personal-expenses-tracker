@@ -1,0 +1,22 @@
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 16px; color: #222; }
+h1 { text-align: center; color: #1f3a68; }
+section { background: #fff; padding: 16px; margin: 14px auto; max-width: 900px;
+          border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+h2 { margin-top: 0; font-size: 18px; color: #1f3a68; }
+.cards { display: flex; gap: 12px; background: none; box-shadow: none; padding: 0; }
+.card { flex: 1; padding: 16px; border-radius: 8px; color: #fff; text-align: center; }
+.card b { display: block; font-size: 22px; margin-top: 6px; }
+.inc { background: #2e9e5b; } .exp { background: #d64545; } .bal { background: #2f6fd0; }
+input, select, button { padding: 8px; margin: 4px 2px; font-size: 14px; }
+button { background: #2f6fd0; color: #fff; border: 0; border-radius: 4px; cursor: pointer; }
+button.del { background: #d64545; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 8px; border-bottom: 1px solid #ddd; text-align: left; font-size: 14px; }
+th { background: #eef2f9; }
+.income { color: #2e9e5b; font-weight: bold; }
+.expense { color: #d64545; font-weight: bold; }
+.tag { display: inline-block; background: #eef2f9; padding: 4px 8px; margin: 4px; border-radius: 12px; }
+.tag button { padding: 0 6px; margin: 0 0 0 4px; background: #d64545; }
+canvas { width: 100%; max-width: 600px; }
+@media (max-width: 600px) { .cards { flex-direction: column; } table { font-size: 12px; } }

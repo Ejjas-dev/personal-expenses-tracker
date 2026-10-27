@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Expense Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Personal Expense Tracker</h1>
+
+<section class="cards">
+  <div class="card inc">Total Income<b id="income">0</b></div>
+  <div class="card exp">Total Expenses<b id="expense">0</b></div>
+  <div class="card bal">Balance<b id="balance">0</b></div>
+</section>
+
+<section>
+  <h2>Add / Edit Transaction</h2>
+  <form id="form">
+    <input type="hidden" id="editId">
+    <select id="type">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+    <input type="number" id="amount" placeholder="Amount" min="0.01" step="0.01" required>
+    <input type="date" id="date" required>
+    <select id="category" required></select>
+    <input type="text" id="desc" placeholder="Description" required>
+    <button type="submit" id="saveBtn">Add</button>
+    <button type="button" id="cancelBtn" hidden>Cancel</button>
+  </form>
+</section>
+
+<section>
+  <h2>Categories</h2>
+  <input id="newCat" placeholder="New category">
+  <button id="addCat">Add Category</button>
+  <div id="catList"></div>
+</section>
+
+<section>
+  <h2>Search &amp; Filter</h2>
+  <input id="search" placeholder="Search description">
+  <select id="filterCat"></select>
+  <select id="filterType">
+    <option value="">All Types</option>
+    <option value="income">Income</option>
+    <option value="expense">Expense</option>
+  </select>
+  From <input type="date" id="from"> To <input type="date" id="to">
+  <button id="clearBtn">Clear</button>
+</section>
+
+<section>
+  <h2>Transactions</h2>
+  <table>
+    <thead><tr><th>Date</th><th>Type</th><th>Category</th><th>Description</th><th>Amount</th><th>Actions</th></tr></thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Monthly Summary</h2>
+  <table>
+    <thead><tr><th>Month</th><th>Income</th><th>Expenses</th><th>Balance</th></tr></thead>
+    <tbody id="monthly"></tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Expenses by Category</h2>
+  <canvas id="chart" width="600" height="280"></canvas>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
